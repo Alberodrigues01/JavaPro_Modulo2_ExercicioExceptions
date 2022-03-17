@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/JavaPro_Modulo2_ExercicioExceptions.iml" filepath="$PROJECT_DIR$/.idea/JavaPro_Modulo2_ExercicioExceptions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exceptions/exceptions.iml" filepath="$PROJECT_DIR$/exceptions/exceptions.iml" />
+    </modules>
+  </component>
+</project>
