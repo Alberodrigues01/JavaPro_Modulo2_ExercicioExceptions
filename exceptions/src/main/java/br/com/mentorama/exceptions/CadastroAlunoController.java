@@ -11,21 +11,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/exceptions")
+@RequestMapping("/cadastro")
 public class CadastroAlunoController {
 
-   CadastroAlunoService cadastroAlunoService;
+    CadastroAlunoService cadastroAlunoService;
 
-    // Listar todos:
+    //Listar todos:
     @GetMapping
-    public ResponseEntity <List<CadastroAluno>> findAll(){
-        return new ResponseEntity<>(cadastroAlunoService.cadastros);
+    public ResponseEntity<List<CadastroAluno>> findAll() {
+       return new ResponseEntity<>(cadastroAlunoService.findAll(), HttpStatus.OK);
 
-    }
+       //Aqui a Application informa:
+        //java.lang.NullPointerException: Cannot invoke "br.com.mentorama.exceptions.CadastroAlunoService.findAll()" because "this.cadastroAlunoService" is null
+        //at br.com.mentorama.exceptions.CadastroAlunoController.findAll(CadastroAlunoController.java:22) ~[classes/:na]
+
+   }
 
     // Listar por Nome:
-    @GetMapping("{/nome}")
-    public ResponseEntity <List<CadastroAluno>> ListByName(@PathVariable ("nome") String nome) {
-        return new ResponseEntity<>(cadastroAlunoService.getNome(), HttpStatus.OK);
+    @GetMapping("/{nome}")
+    public ResponseEntity<List<CadastroAluno>> ListByName(@PathVariable("nome") String nome) {
+        return new ResponseEntity<>(cadastroAlunoService.listByName(nome) , HttpStatus.OK);
     }
 }
